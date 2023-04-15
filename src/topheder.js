@@ -119,7 +119,7 @@ function Topheder(props) {
                 value={tex1}
                 placeholder="Enter or paste text here"
                 onChange={handleOnChange}
-              ></textarea>
+                required ></textarea>
             </div>
             
             <div className="pt-3">
@@ -171,14 +171,7 @@ function Topheder(props) {
                 Reset
               </button>
               &nbsp;&nbsp;&nbsp;
-              <button
-                type="button"
-                className="btn btn-outline-danger"
-                onClick={handalclickrestart}
-              >
-                test commint
-              </button>
-              &nbsp;&nbsp;&nbsp;
+
             </div>
         </form>
       </div>
