@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import logo from "./logo.svg";
+import "../App.css";
 
 // const fname = "Gautam";
 // const lname = "Gohel";
@@ -9,13 +10,11 @@ import logo from "./logo.svg";
 
 function Topheder(props) {
   const handalupclick = (event) => {
-    // console.log("click");
     let newText = tex1.toUpperCase();
     setText(newText);
   };
 
   const handallrclick = (event) => {
-    // console.log("click222");
     let newText = tex1.toLowerCase();
     setText(newText);
   };
@@ -25,8 +24,8 @@ function Topheder(props) {
 
     str = str.toLowerCase();
     const arr = str.split(" ");
-    for (var ii = 0; ii < arr.length; ii++) {
-      arr[ii] = arr[ii].charAt(0).toUpperCase() + arr[ii].slice(1);
+    for (var i = 0; i < arr.length; i++) {
+      arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
     }
 
     const tex2 = arr.join(" ");
@@ -44,39 +43,29 @@ function Topheder(props) {
     setText(tex2);
   };
   const handalclickcopy = (event) => {
-   
-  //  console.log("Click");
-  // console.log(typeof(tex1))
-  if (tex1 === "" )
-  {
-    setText2("Field Is Empty");
-  }
-  else{
-    navigator.clipboard.writeText(tex1);
-    setText2("Copied");
-  }
+    if (tex1 === "") {
+      setText2("Field Is Empty");
+    } else {
+      navigator.clipboard.writeText(tex1);
+      setText2("Copied");
+    }
   };
   const handalclickrestart = (event) => {
     setText("");
     // console.log("Click");
     setText2("Copy to clipboard");
-   };
+  };
   const handleOnChange = (event) => {
-
     setText(event.target.value);
-    if (tex1 === " " )
-    {
+    if (tex1 === " ") {
       setText2("Field Is Empty");
-    }
-    else{
- 
+    } else {
       setText2("Copy to clipboard");
     }
-    
   };
   const [tex1, setText] = useState("");
   const [tex2, setText2] = useState("Copy to clipboard");
- 
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -103,7 +92,7 @@ function Topheder(props) {
                 >
                   {props.title}
                 </a>
-              </li> 
+              </li>
             </ul>
             <form className="d-flex" role="search">
               <input
@@ -119,68 +108,70 @@ function Topheder(props) {
           </div>
         </div>
       </nav>
+      {/* body area */}
       <div className="container">
-        <form>
-          <div className="form-group pt-5 pb-3">
-            <textarea
-              className="form-control"
-              id="textarea1"
-              rows="5"
-              value={tex1}
-              placeholder="Enter or paste text here"
-              onChange={handleOnChange}
-            ></textarea>
-          </div>
-          <div className="pt-3">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={handalupclick}
-            >
-              UPPERCASE
-            </button>
-            &nbsp;&nbsp;&nbsp;
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={handallrclick}
-            >
-              lowercase
-            </button>
-            &nbsp;&nbsp;&nbsp;
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={handalcpiclick}
-            >
-              Capita Lize
-            </button>
-            &nbsp;&nbsp;&nbsp;
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={handalclickcA}
-            >
-              cApItA lIzE
-            </button>
-            &nbsp;&nbsp;&nbsp;
-            <button
-              type="button"
-              className="btn btn-warning"
-              onClick={handalclickcopy}
-            >
-            {tex2}
-            </button>
-            &nbsp;&nbsp;&nbsp;
-            <button
-              type="button"
-              className="btn btn-outline-danger"
-              onClick={handalclickrestart}
-            >
-            Reset
-            </button>
-            &nbsp;&nbsp;&nbsp;
-          </div>
+        <form >
+            <div className="form-group pt-5">
+              <textarea
+                className="form-control"
+                id="textarea1"
+                rows="5"
+                value={tex1}
+                placeholder="Enter or paste text here"
+                onChange={handleOnChange}
+              ></textarea>
+            </div>
+            
+            <div className="pt-3">
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={handalupclick}
+              >
+                UPPERCASE
+              </button>
+              &nbsp;&nbsp;&nbsp;
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={handallrclick}
+              >
+                lowercase
+              </button>
+              &nbsp;&nbsp;&nbsp;
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={handalcpiclick}
+              >
+                Capita Lize
+              </button>
+              &nbsp;&nbsp;&nbsp;
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={handalclickcA}
+              >
+                cApItA lIzE
+              </button>
+              &nbsp;&nbsp;&nbsp;
+              <button
+                type="button"
+                className="btn btn-warning"
+                onClick={handalclickcopy}
+              >
+                {tex2}
+              </button>
+              &nbsp;&nbsp;&nbsp;
+              <button
+                type="button"
+                className="btn btn-outline-danger"
+                onClick={handalclickrestart}
+              >
+                Reset
+              </button>
+              &nbsp;&nbsp;&nbsp;
+            </div>
         </form>
       </div>
     </>
