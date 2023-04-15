@@ -3,7 +3,7 @@ import Topheder from "./topheder";
 function App() {
   return (
     <>
-      <Topheder title="index" />
+      <Topheder title="Home" />
     </>
   );
 }
