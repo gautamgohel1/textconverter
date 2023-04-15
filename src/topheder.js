@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import logo from "./logo.svg";
-import "../App.css";
+import "./App.css";
 
 // const fname = "Gautam";
 // const lname = "Gohel";
@@ -169,6 +169,14 @@ function Topheder(props) {
                 onClick={handalclickrestart}
               >
                 Reset
+              </button>
+              &nbsp;&nbsp;&nbsp;
+              <button
+                type="button"
+                className="btn btn-outline-danger"
+                onClick={handalclickrestart}
+              >
+                test commint
               </button>
               &nbsp;&nbsp;&nbsp;
             </div>

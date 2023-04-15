@@ -1,4 +1,4 @@
-import Topheder from "./componant/topheder";
+import Topheder from "./topheder";
 
 function App() {
   return (
