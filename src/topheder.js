@@ -14,6 +14,16 @@ function Topheder(props) {
     setText(newText);
   };
 
+  const handalfirstup = (event) =>{
+   let str = tex1.toString();
+
+    str = str.toLowerCase();
+
+      let str2=str[0].toUpperCase() + str.slice(1);
+
+    setText(str2);
+  }
+
   const handallrclick = (event) => {
     let newText = tex1.toLowerCase();
     setText(newText);
@@ -50,6 +60,13 @@ function Topheder(props) {
       setText2("Copied");
     }
   };
+  const removeextraspace = (event) =>{
+   let str = tex1.toString();
+
+    let str2 = str.replace(/\s+/g, ' ').trim();
+
+    setText(str2);
+  }
   const handalclickrestart = (event) => {
     setText("");
     // console.log("Click");
@@ -134,6 +151,14 @@ function Topheder(props) {
               <button
                 type="button"
                 className="btn btn-primary"
+                onClick={handalfirstup}
+              >
+                First Letter Uppercase
+              </button>
+              &nbsp;&nbsp;&nbsp;
+              <button
+                type="button"
+                className="btn btn-primary"
                 onClick={handallrclick}
               >
                 lowercase
@@ -153,6 +178,14 @@ function Topheder(props) {
                 onClick={handalclickcA}
               >
                 cApItA lIzE
+              </button>
+                &nbsp;&nbsp;&nbsp;
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={removeextraspace}
+              >
+                Remove Extra Space
               </button>
               &nbsp;&nbsp;&nbsp;
               <button
