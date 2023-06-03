@@ -54,7 +54,7 @@ function Topheder(props) {
   };
   const handalclickcopy = (event) => {
     if (tex1 === "") {
-      setText2("Field Is Empty 😟");
+      setText2("Field Is Empty 😟😟");
     } else {
       navigator.clipboard.writeText(tex1);
       setText2("Copied");
